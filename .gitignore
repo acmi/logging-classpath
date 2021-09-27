@@ -1,0 +1,9 @@
+# Intellij
+.idea/
+*.iml
+
+# Maven
+target/
+
+# Application
+out.docx
