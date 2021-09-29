@@ -7,3 +7,6 @@ target/
 
 # Application
 out.docx
+
+#log4j2
+*.log
