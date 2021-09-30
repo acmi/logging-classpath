@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<Configuration status="info">
 
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
         </Console>
-        <File name="MyFile" fileName="logs/app.log">
+        <File name="MyFile" fileName="app.log">
             <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
         </File>
     </Appenders>
 
     <Loggers>
-        <Root level="DEBUG">
+        <Logger name="org.apache.http.headers" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile"/>
+        </Logger>
+        <Root level="info">
             <!-- Only events at DIAG level or more specific are sent to the console. -->
             <AppenderRef ref="Console"/>
             <AppenderRef ref="MyFile"/>
