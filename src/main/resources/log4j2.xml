@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout pattern="%d %-5level [%logger] %msg%n%xThrowable" />
+        </Console>
+        <File name="File" fileName="logs.log">
+            <PatternLayout pattern="%d %-5level [%logger] %msg%n%xThrowable"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.apache.http.headers" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
